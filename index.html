@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Maps Direction API Example</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet">
+</head>
+<body>
+  
+  <div id="map"></div>
+  <button id="openButton" onclick="openMenu()">
+    <div id="greybar"></div>
+  </button>
+<div id="swipeUpMenu">
+    <form id="directions-form">
+      <button id="closeButton" onclick="closeMenu()">
+        <div id="greybar"></div>
+      </button>
+      <br>
+      <b id="modetravel">Mode of Travel</b>
+      <br>
+      <button type ="submit" id="driving-button" onclick="changeTravelMode('DRIVING')">
+        <img src="Bus.png"/>
+      </button>
+      <button type ="submit" id="walking-button" onclick="changeTravelMode('WALKING')">
+        <img src="Direct.png"/>
+      </button>
+      <button type ="submit" id="transit-button" onclick="changeTravelMode('TRANSIT')">
+        <img src="Train.png"/>
+      </button>
+      <br>
+      <input type="text" id="origin" placeholder="Enter origin">
+      <br>
+      <input type="text" id="destination" placeholder="Enter destination">
+      <br>
+      <button type="submit" id="submit">Get Directions</button>
+      <div id="duration"></div>
+      <div id="cost"></div>
+      <div id="overview"></div>
+    </form>
+    <div id="instructions" class="scrollable-div"></div>
+</div>
+  <script src="script.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBirRTNLgpQo-vDQUntYL3UAL93hXJI2k0&libraries=places&callback=initMap" async defer></script>
+</body>
+</html>
